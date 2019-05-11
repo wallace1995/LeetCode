@@ -1,0 +1,17 @@
+class Solution(object):
+	def twoSum(self,nums,target):
+		dic = {}
+		for idx,val in enumerate(nums):
+			dic[val] = idx
+
+		for idx1,val1 in enumerate(nums):
+		 	val2 = target - val1
+		 	if val2 in dic and dic[val2] != idx1:
+		 		return [idx1,dic[val2]]
+
+if __name__ == '__main__':
+	s = Solution()
+	print(s.twoSum([2,7,11,15],9))
+	print(s.twoSum([3,2,4],6))
+	print(s.twoSum([3,3],6))
+	print(s.twoSum([3,5,3],6))
